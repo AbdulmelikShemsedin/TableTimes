@@ -49,17 +49,17 @@ Customers can browse restaurants, order meals, and book tables — while restaur
 
 ## 📁 Project Structure
 
-TableTimes-Food/
-├── backend/
-│ ├── config/
-│ ├── models/
-│ ├── routes/
-│ └── middleware/
-├── frontend/
-│ └── src/
-│ ├── pages/
-│ ├── components/
-│ └── context/
+TableTimes-Food/<br>
+ ├─ backend/<br>
+ │ ├── config/<br>
+ │ ├── models/<br>
+ │ ├── routes/<br>
+ │ └── middleware/<br>
+ ├─ frontend/<br>
+ │ └── src/<br>
+ │ ├── pages/<br>
+ │ ├── components/<br>
+ │ └── context/<br>
 
 
 ---
