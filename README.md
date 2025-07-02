@@ -77,7 +77,7 @@ Abdulmelik Shemsedin
 https://www.linkedin.com/in/abdulmelik-shemsedin-shifa • https://github.com/AbdulmelikShemsedin
 
 Natan Sahlu
-https://www.linkedin.com/in/natan-sahlu-9712642b1 • GitHub
+https://www.linkedin.com/in/natan-sahlu-9712642b1 • https://github.com/nati-sahlu
 
 🧠 ALX Project Goal
 This project demonstrates fullstack development skills including:
@@ -90,5 +90,6 @@ Role-based access control
 
 Reusable components & state management
 
-Deployment and security best practices
+Deployment and security best practices 
+
 
