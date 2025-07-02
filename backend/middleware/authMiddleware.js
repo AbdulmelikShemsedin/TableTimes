@@ -13,4 +13,11 @@ function protect(req, res, next) {
   }
 }
 
-module.exports = { protect };
+function isOwner(req, res, next) {
+  if (req.user.role !== 'owner') {
+    return res.status(403).json({ message: 'Access denied. Owner only.' });
+  }
+  next();
+}
+
+module.exports = { protect, isOwner };
