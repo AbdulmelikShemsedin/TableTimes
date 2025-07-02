@@ -1,4 +1,13 @@
 {
+<<<<<<< HEAD
+<<<<<<< HEAD
+  "dependencies": {
+    "axios": "^1.10.0",
+    "react-router-dom": "^7.6.3"
+  }
+=======
+=======
+>>>>>>> edfcf7a7210764e8cb0413e92ee5cbcf4ac1969c
   "name": "frontend",
   "version": "1.0.0",
   "main": "index.js",
@@ -13,4 +22,8 @@
   "author": "",
   "license": "ISC",
   "description": ""
+<<<<<<< HEAD
+>>>>>>> 930bdf6 (Initialize frontend with package.json and dependencies)
+=======
+>>>>>>> edfcf7a7210764e8cb0413e92ee5cbcf4ac1969c
 }
