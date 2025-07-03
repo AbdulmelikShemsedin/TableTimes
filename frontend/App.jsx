@@ -12,7 +12,6 @@ function App() {
         <Route path="/register" element={<Register />} />
         <Route path="/owner/dashboard" element={<Dashboard />} />
         <Route path="/owner/menu" element={<MenuManager />} />
-        {/* You can add more as you grow */}
       </Routes>
     </BrowserRouter>
   );
