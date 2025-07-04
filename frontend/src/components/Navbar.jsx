@@ -7,6 +7,7 @@ function Navbar() {
   const handleLogout = () => {
     localStorage.removeItem('token');
     localStorage.removeItem('user');
+    localStorage.removeItem('cart');
     navigate('/login');
   };
 
@@ -15,6 +16,10 @@ function Navbar() {
       <Link to="/" className="text-2xl font-bold text-green-700">TableTimes</Link>
       <div className="space-x-4">
         <Link to="/restaurants" className="text-gray-700 hover:text-green-700">Browse</Link>
+
+        {user && user.role === 'customer' && (
+          <Link to="/cart" className="text-gray-700 hover:text-green-700">Cart</Link>
+        )}
 
         {!user && (
           <>
