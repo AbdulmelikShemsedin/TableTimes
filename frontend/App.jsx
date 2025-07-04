@@ -6,10 +6,12 @@ import Dashboard from './pages/owner/Dashboard';
 import MenuManager from './pages/owner/MenuManager';
 import RestaurantList from './pages/RestaurantList';
 import RestaurantDetail from './pages/RestaurantDetail';
+import Navbar from './components/Navbar';
 
 function App() {
   return (
     <BrowserRouter>
+      <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
