@@ -1,6 +1,5 @@
-// src/pages/owner/MenuManager.jsx
 import { useEffect, useState } from 'react';
-import axios from 'axios';
+import axios from '../../utils/axios';
 import MenuItemForm from '../../components/MenuItemForm';
 import MenuItemCard from '../../components/MenuItemCard';
 
@@ -9,56 +8,41 @@ function MenuManager() {
   const [menu, setMenu] = useState([]);
   const [editingItem, setEditingItem] = useState(null);
 
-  const token = localStorage.getItem('token');
-
   useEffect(() => {
-    axios.get('http://localhost:5000/api/restaurants/me', {
-      headers: { Authorization: `Bearer ${token}` }
-    }).then(res => {
+    axios.get('/api/restaurants/me').then(res => {
       setRestaurantId(res.data._id);
       loadMenu(res.data._id);
     });
-  }, [token]);
+  }, []);
 
   const loadMenu = async (id) => {
-    const res = await axios.get(`http://localhost:5000/api/menu/${id}`);
+    const res = await axios.get(`/api/menu/${id}`);
     setMenu(res.data);
   };
 
   const handleAdd = async (data) => {
-    await axios.post('http://localhost:5000/api/menu', {
-      ...data,
-      restaurantId
-    }, {
-      headers: { Authorization: `Bearer ${token}` }
-    });
+    await axios.post('/api/menu', { ...data, restaurantId });
     loadMenu(restaurantId);
   };
 
   const handleUpdate = async (data) => {
-    await axios.put(`http://localhost:5000/api/menu/${editingItem._id}`, data, {
-      headers: { Authorization: `Bearer ${token}` }
-    });
+    await axios.put(`/api/menu/${editingItem._id}`, data);
     setEditingItem(null);
     loadMenu(restaurantId);
   };
 
   const handleDelete = async (id) => {
-    await axios.delete(`http://localhost:5000/api/menu/${id}`, {
-      headers: { Authorization: `Bearer ${token}` }
-    });
+    await axios.delete(`/api/menu/${id}`);
     loadMenu(restaurantId);
   };
 
   return (
     <div className="p-4 max-w-3xl mx-auto">
       <h1 className="text-2xl font-bold mb-4">Manage Menu</h1>
-
       <MenuItemForm
         initialData={editingItem}
         onSubmit={editingItem ? handleUpdate : handleAdd}
       />
-
       <div className="mt-6 grid gap-4">
         {menu.map(item => (
           <MenuItemCard
