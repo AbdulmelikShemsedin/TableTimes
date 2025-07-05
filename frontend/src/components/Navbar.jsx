@@ -18,7 +18,17 @@ function Navbar() {
         <Link to="/restaurants" className="text-gray-700 hover:text-green-700">Browse</Link>
 
         {user && user.role === 'customer' && (
-          <Link to="/cart" className="text-gray-700 hover:text-green-700">Cart</Link>
+          <>
+            <Link to="/cart" className="text-gray-700 hover:text-green-700">Cart</Link>
+            <Link to="/orders" className="text-gray-700 hover:text-green-700">My Orders</Link>
+          </>
+        )}
+
+        {user && user.role === 'owner' && (
+          <>
+            <Link to="/owner/dashboard" className="text-gray-700 hover:text-green-700">Dashboard</Link>
+            <Link to="/owner/orders" className="text-gray-700 hover:text-green-700">Orders</Link>
+          </>
         )}
 
         {!user && (
@@ -26,10 +36,6 @@ function Navbar() {
             <Link to="/login" className="text-gray-700 hover:text-green-700">Login</Link>
             <Link to="/register" className="text-gray-700 hover:text-green-700">Register</Link>
           </>
-        )}
-
-        {user && user.role === 'owner' && (
-          <Link to="/owner/dashboard" className="text-gray-700 hover:text-green-700">Dashboard</Link>
         )}
 
         {user && (
