@@ -6,6 +6,7 @@ import Dashboard from './pages/owner/Dashboard';
 import MenuManager from './pages/owner/MenuManager';
 import RestaurantList from './pages/RestaurantList';
 import RestaurantDetail from './pages/RestaurantDetail';
+import Cart from './pages/Cart';
 import Navbar from './components/Navbar';
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
         <Route path="/owner/menu" element={<MenuManager />} />
         <Route path="/restaurants" element={<RestaurantList />} />
         <Route path="/restaurants/:id" element={<RestaurantDetail />} />
+        <Route path="/cart" element={<Cart />} />
       </Routes>
     </BrowserRouter>
   );

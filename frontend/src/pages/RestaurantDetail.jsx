@@ -12,6 +12,12 @@ function RestaurantDetail() {
     axios.get(`/api/menu/${id}`).then(res => setMenu(res.data));
   }, [id]);
 
+  const handleAddToCart = (item) => {
+    const currentCart = JSON.parse(localStorage.getItem('cart')) || [];
+    localStorage.setItem('cart', JSON.stringify([...currentCart, item]));
+    alert('Added to cart');
+  };
+
   if (!restaurant) return <p className="text-center p-6">Loading...</p>;
 
   return (
@@ -27,6 +33,12 @@ function RestaurantDetail() {
             <h3 className="text-xl font-semibold">{item.name}</h3>
             <p className="text-gray-600">{item.description}</p>
             <p className="font-bold">${item.price}</p>
+            <button
+              onClick={() => handleAddToCart(item)}
+              className="mt-2 bg-blue-600 text-white px-3 py-1 rounded"
+            >
+              Add to Cart
+            </button>
           </div>
         ))}
       </div>
